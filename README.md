@@ -1,4 +1,6 @@
-javascript-asynchronous-programming/
+
+```
+Asynchronous Programming/
 │
 ├── README.md
 ├── package.json
