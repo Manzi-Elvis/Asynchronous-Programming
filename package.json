@@ -1,0 +1,14 @@
+{
+  "name": "asynchronous-programming",
+  "version": "0.1.0",
+  "description": "Hands-on curriculum for mastering asynchronous JavaScript",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}

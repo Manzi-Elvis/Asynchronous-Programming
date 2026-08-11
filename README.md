@@ -1,4 +1,78 @@
-# PROJECT STRUCTURE
+    # Asynchronous Programming
+
+A hands-on, ground-up curriculum for mastering asynchronous JavaScript — from
+how the runtime actually schedules work, up through callbacks, Promises,
+async/await, cancellation, patterns used in production systems, and a final
+project that ties everything together.
+
+Every topic folder follows the same shape:
+
+```
+topic/
+├── NOTES.md          <- concepts, mental models, gotchas
+├── 01-*.js ...        <- runnable demonstration files
+└── exercises/         <- problems to solve yourself, no solutions given
+```
+
+Run any file with:
+
+```bash
+node path/to/file.js
+```
+
+## How to use this repo
+
+1. Read `NOTES.md` in a folder first.
+2. Run each numbered demo file and **predict the output before you run it**.
+   This is the single highest-leverage habit for learning the event loop.
+3. Attempt the exercises without looking at the demo files again.
+4. Move to the next folder in order — later modules assume earlier ones.
+
+## Curriculum map
+
+| # | Module | What it builds |
+|---|--------|-----------------|
+| 00 | JavaScript Runtime | Call stack, heap, Web APIs, event loop, task queue, microtask queue |
+| 01 | Sync vs Async | The core distinction, blocking vs non-blocking |
+| 02 | Callbacks | Callback style, error-first convention, callback hell, inversion of control |
+| 03 | Promises | States, creation, consumption, chaining, error handling, internals |
+| 04 | Promise Concurrency | all/allSettled/race/any, sequential vs concurrent, pools, limits |
+| 05 | Async/Await | Syntax sugar over Promises, try/catch, common mistakes |
+| 06 | Event Loop + Promises | Microtask vs macrotask ordering in depth |
+| 07 | Fetch & Web APIs | fetch, XHR, geolocation, clipboard, file API |
+| 08 | Node.js Async | fs, timers, EventEmitter, streams, http |
+| 09 | Cancellation | AbortController / AbortSignal, timeouts |
+| 10 | Async Patterns | retry, timeout, polling, queues, schedulers, rate limiting |
+| 11 | Testing | Testing promises, rejections, timeouts, retries |
+| 12 | Debugging | Unhandled rejections, async stack traces, race conditions |
+| 13 | Common Mistakes | The 10 mistakes almost everyone makes |
+| 14 | Build Your Own Promise | Implement Promises/A+ from scratch |
+| 15 | Projects | 5 progressively harder projects + a final capstone |
+
+## Status
+
+- [x] Scaffolding for all 16 modules
+- [x] Module 00 — JavaScript Runtime (complete)
+- [ ] Module 01 — Sync vs Async
+- [ ] Module 02 — Callbacks
+- [ ] Module 03 — Promises
+- [ ] Module 04 — Promise Concurrency
+- [ ] Module 05 — Async/Await
+- [ ] Module 06 — Event Loop + Promises
+- [ ] Module 07 — Fetch & Web APIs
+- [ ] Module 08 — Node.js Async
+- [ ] Module 09 — Cancellation
+- [ ] Module 10 — Async Patterns
+- [ ] Module 11 — Testing
+- [ ] Module 12 — Debugging
+- [ ] Module 13 — Common Mistakes
+- [ ] Module 14 — Build Your Own Promise
+- [ ] Module 15 — Projects
+
+I'm building this one module at a time so each one is actually complete
+rather than thin.
+
+## PROJECT STRUCTURE
 ```
 Asynchronous Programming/
 │
