@@ -76,11 +76,41 @@ function processOrderPyramid(order) {
 // `handleInventoryUpdated`, `handleConfirmed` — each takes exactly
 // what it needs and calls the NEXT named function, no nesting beyond
 // one level per function body.
-
-function processOrderFlattened(order) {
-  // your implementation here
+const handleConfirmed = (err4, confirmation) => {
+    if (err4) return console.error('Confirmation failed:', err4.message);
+    console.log('Order processed successfully:', confirmation);
 }
 
+
+ const handleInventoryUpdated = (validOrder, charge, err3, inventoryResult) => {
+    if (err3) return console.error('Inventory update failed:', err3.message);
+    sendConfirmation(validOrder, charge, inventoryResult, handleConfirmed);
+ };
+
+
+
+const handlePaymentCharged = (validOrder, err2, charge) => {
+      if (err2) return console.error('Payment failed:', err2.message);
+      updateInventory(validOrder, charge, handleInventoryUpdated.bind(null, validOrder, charge));
+    }
+
+
+
+const handleValidated = (err1, validOrder) => {
+    if (err1){
+        return console.error('Validation failed:', err1.message);
+    }
+    chargePayment(
+        validOrder,
+        handlePaymentCharged.bind(null, validOrder));
+}
+
+function processOrderFlattened(order) {
+  validateOrder(order, handleValidated);
+}
+
+
+processOrderFlattened({ items: ['widget'], total: 29.99 });
 // processOrderFlattened({ items: ['widget'], total: 29.99 });
 
 /**
