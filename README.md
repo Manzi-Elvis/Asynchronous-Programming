@@ -53,13 +53,13 @@ node path/to/file.js
 
 - [x] Scaffolding for all 16 modules
 - [x] Module 00 — JavaScript Runtime (complete)
-- [ ] Module 01 — Sync vs Async
-- [ ] Module 02 — Callbacks
-- [ ] Module 03 — Promises
-- [ ] Module 04 — Promise Concurrency
-- [ ] Module 05 — Async/Await
-- [ ] Module 06 — Event Loop + Promises
-- [ ] Module 07 — Fetch & Web APIs
+- [x] Module 01 — Sync vs Async
+- [x] Module 02 — Callbacks
+- [x] Module 03 — Promises
+- [x] Module 04 — Promise Concurrency
+- [x] Module 05 — Async/Await
+- [x] Module 06 — Event Loop + Promises
+- [x] Module 07 — Fetch & Web APIs
 - [ ] Module 08 — Node.js Async
 - [ ] Module 09 — Cancellation
 - [ ] Module 10 — Async Patterns
