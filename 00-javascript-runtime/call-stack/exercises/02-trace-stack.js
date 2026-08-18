@@ -34,6 +34,69 @@ function sumArray(arr) {
 
 function sumArrayFixed(arr) {
   // your implementation here
+  if(arr.length === 0) return 0;
+  return arr[0] + sumArrayFixed(arr.slice(1))
 }
 
-// console.log(sumArrayFixed([1, 2, 3])); // should log 6
+ console.log(sumArrayFixed([1, 2, 3])); // should log 6
+
+
+// PART 1:
+// For [1, 2, 3], the deepest point is when the recursive calls have reduced the array to []:
+
+// sumArray([1, 2, 3])
+//   → sumArray([2, 3])
+//     → sumArray([3])
+//       → sumArray([])
+
+// WHAT THE CALL STACK LOOKS LIKE:
+// 
+// C:\Async JS\00-javascript-runtime\call-stack\exercises\02-trace-stack.js:19
+//   if (arr.length === 0) {
+//           ^
+
+// RangeError: Maximum call stack size exceeded
+//     at sumArray (C:\Users\elvis\Documents\PROJECTS\Async JS\00-javascript-runtime\call-stack\exercises\02-trace-stack.js:19:11)
+//     at sumArray (C:\Users\elvis\Documents\PROJECTS\Async JS\00-javascript-runtime\call-stack\exercises\02-trace-stack.js:25:19)
+//     at sumArray (C:\Users\elvis\Documents\PROJECTS\Async JS\00-javascript-runtime\call-stack\exercises\02-trace-stack.js:25:19)
+//     at sumArray (C:\Users\elvis\Documents\PROJECTS\Async JS\00-javascript-runtime\call-stack\exercises\02-trace-stack.js:25:19)
+//     at sumArray (C:\Users\elvis\Documents\PROJECTS\Async JS\00-javascript-runtime\call-stack\exercises\02-trace-stack.js:25:19)
+//     at sumArray (C:\Users\elvis\Documents\PROJECTS\Async JS\00-javascript-runtime\call-stack\exercises\02-trace-stack.js:25:19)
+//     at sumArray (C:\Users\elvis\Documents\PROJECTS\Async JS\00-javascript-runtime\call-stack\exercises\02-trace-stack.js:25:19)
+//     at sumArray (C:\Users\elvis\Documents\PROJECTS\Async JS\00-javascript-runtime\call-stack\exercises\02-trace-stack.js:25:19)
+//     at sumArray (C:\Users\elvis\Documents\PROJECTS\Async JS\00-javascript-runtime\call-stack\exercises\02-trace-stack.js:25:19)
+//     at sumArray (C:\Users\elvis\Documents\PROJECTS\Async JS\00-javascript-runtime\call-stack\exercises\02-trace-stack.js:25:19)
+
+
+// PART 2:
+
+// With slice(1)
+// Now each call gets a smaller array:
+
+// sumArrayFixed([1, 2, 3])
+//         ↓
+// sumArrayFixed([2, 3])
+//         ↓
+// sumArrayFixed([3])
+//         ↓
+// sumArrayFixed([])
+//         ↓
+//        0
+
+// Then the stack unwinds:
+
+// sumArrayFixed([])
+// → 0
+
+// sumArrayFixed([3])
+// → 3 + 0
+// → 3
+
+// sumArrayFixed([2, 3])
+// → 2 + 3
+// → 5
+
+// sumArrayFixed([1, 2, 3])
+// → 1 + 5
+// → 6
+
