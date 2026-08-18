@@ -30,9 +30,10 @@ outer();
 console.log('end');
 
 // Your prediction (write it as a comment before running):
-// 1.
-// 2.
-// 3.
-// 4.
-// 5.
-// 6.
+// 1. start
+// 2. A
+// 3. B
+// 4. B.5
+// 5. C
+// 6. D
+// 7. end
