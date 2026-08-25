@@ -34,3 +34,23 @@ Extension:
 Modify the function so the callback receives: elapsedTime
 Ask yourself how accurately you can measure it.
 */
+
+const callback = (elapsedTime) => console.log("Hello")
+const delay = (callback, ms) => {
+      setTimeout(callback,ms);
+}
+delay(callback,1000)
+
+
+//////////// Extension////////////////////
+
+const delayExt = (callback2, ms) => {
+      const start = Date.now();
+      setTimeout(() => {
+            const elapsedTime = Date.now() - start;
+            callback2(elapsedTime);
+      },ms);
+}
+delayExt((elapsedTime) => {
+      console.log(`Hello! It took ${elapsedTime} ms`)
+},2000)
