@@ -34,6 +34,7 @@ You must understand:
 - callback failure
 
 Extension: Explain why wrapping callback APIs in Promises can be useful.
+Answer: Promises provide a cleaner and more composable way to handle asynchronous operations.
 */
 
 const getUserPromise = id => {
