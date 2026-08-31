@@ -3,11 +3,11 @@
 
 Create five timers:
 
-0ms
-0ms
-10ms
-1ms
-0ms
+1. 0ms
+2. 0ms
+3. 10ms
+4. 1ms
+5. 0ms
 
 Determine whether the timers necessarily execute in numerical delay order.
 
