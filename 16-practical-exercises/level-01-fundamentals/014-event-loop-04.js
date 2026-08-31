@@ -3,9 +3,9 @@
 
 Construct a program containing:
 
-Promise.then()
-setTimeout()
-nested Promise.then()
+- Promise.then()
+- setTimeout()
+- nested Promise.then()
 
 Your task is to determine the exact ordering.
 */
